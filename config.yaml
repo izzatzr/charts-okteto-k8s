@@ -1,5 +1,3 @@
-image:
-  tag: 5
 wordpressEmail: change-me@okteto.com
 wordpressUsername: admin
 wordpressPassword: admin

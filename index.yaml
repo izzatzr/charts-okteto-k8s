@@ -3,7 +3,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.17
-    created: "2019-12-10T22:14:54.115194269+07:00"
+    created: "2019-12-10T22:19:49.800378169+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -31,9 +31,9 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.2.2
-    created: "2019-12-10T22:14:54.112927558+07:00"
+    created: "2019-12-10T22:19:49.798059287+07:00"
     description: Web publishing platform for building blogs and websites.
-    digest: 370b1ad183b9cf3b4c13ba6501a409ec732ee5d5df9988f3bb35eeab9d97b654
+    digest: e4934b488c6cfa6e1273d2d2f31c9dc8803f6c33a64f2610b0f1bb82b225a345
     engine: gotpl
     home: http://www.wordpress.com/
     icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
@@ -54,4 +54,4 @@ entries:
     urls:
     - wordpress-7.0.1.tgz
     version: 7.0.1
-generated: "2019-12-10T22:14:54.102649661+07:00"
+generated: "2019-12-10T22:19:49.780818518+07:00"
