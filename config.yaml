@@ -1,0 +1,38 @@
+wordpressEmail: change-me@okteto.com
+wordpressUsername: admin
+wordpressPassword: admin
+allowEmptyPassword: false
+
+wordpressFirstName: FirstName
+wordpressLastName: LastName
+wordpressBlogName: User's Blog!
+
+wordpressScheme: https
+
+mariadb:
+  db:
+    name: admin
+    user: admin
+
+  rootUser:
+    password: admin
+
+  master:
+    persistence:
+      size: 10Gi
+
+persistence:
+  size: 10Gi
+
+resources:
+  limits:
+    memory: 1Gi
+    cpu: 1
+
+updateStrategy:
+  type: Recreate
+
+service:
+  type: ClusterIP
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
