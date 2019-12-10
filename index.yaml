@@ -3,7 +3,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.17
-    created: "2019-12-10T21:43:10.477720499+07:00"
+    created: "2019-12-10T22:08:55.211829849+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -26,14 +26,14 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://izzatzr.github.io/uglpec-charts/charts/mariadb-6.7.4.tgz
+    - charts/mariadb-6.7.4.tgz
     version: 6.7.4
   wordpress:
   - apiVersion: v1
     appVersion: 5.2.2
-    created: "2019-12-10T21:43:10.475470308+07:00"
+    created: "2019-12-10T22:08:55.209576306+07:00"
     description: Web publishing platform for building blogs and websites.
-    digest: 8c623e7997c1b3dc154f841e72d5a413d8e99f8d50d9e7c2a2b62807279fe07c
+    digest: 6751f3c05a546d9257b844677e1383d8a722647d8464d80781c085a7e296c317
     engine: gotpl
     home: http://www.wordpress.com/
     icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
@@ -52,6 +52,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/wordpress-7.0.1.tgz
+    - wordpress-7.0.1.tgz
     version: 7.0.1
-generated: "2019-12-10T21:43:10.467319845+07:00"
+generated: "2019-12-10T22:08:55.200363442+07:00"
