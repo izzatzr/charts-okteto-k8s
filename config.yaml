@@ -1,11 +1,15 @@
-wordpressEmail: change-me@okteto.com
+image:
+  repository: bitnami/wordpress
+  tag: 5
+
+wordpressEmail: admin@lpec.com
 wordpressUsername: admin
 wordpressPassword: admin
 allowEmptyPassword: false
 
-wordpressFirstName: FirstName
-wordpressLastName: LastName
-wordpressBlogName: User's Blog!
+wordpressFirstName: admin
+wordpressLastName: admin
+wordpressBlogName: lpecwebpage
 
 wordpressScheme: https
 
@@ -26,8 +30,8 @@ persistence:
 
 resources:
   limits:
-    memory: 512Mi
-    cpu: 300m
+    memory: 1Gi
+    cpu: 1
 
 updateStrategy:
   type: Recreate
