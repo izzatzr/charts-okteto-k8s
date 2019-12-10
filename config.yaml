@@ -24,6 +24,10 @@ mariadb:
 persistence:
   size: 5Gi
 
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 300m
 
 updateStrategy:
   type: Recreate
