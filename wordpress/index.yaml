@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T17:50:44.919457702+07:00"
+    created: "2019-12-11T00:54:05.505647695+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 1f351987e3fe925f2f22c9db85daf5071c38b48b793d3f5f86a5aa8af8a4536c
+    digest: 1a0368ee1abee324a2bbe5645a3f16d9f2cba6cd7be3bf0e08bbf850fbe2e665
     engine: gotpl
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
@@ -26,12 +26,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
+    - https://izzatzr.github.io/uglpec-charts/charts/mariadb-7.3.0.tgz
     version: 7.3.0
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T17:50:44.937534769+07:00"
+    created: "2019-12-11T00:54:05.503176123+07:00"
     description: Web publishing platform for building blogs and websites.
     digest: 6f7f45cef88652030a384e5d7278335aa2ec1b7ad2dcfa6368534364f02deb5c
     engine: gotpl
@@ -52,31 +52,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
+    - https://izzatzr.github.io/uglpec-charts/wordpress-8.0.1.tgz
     version: 8.0.1
-  - apiVersion: v1
-    appVersion: 5.2.3
-    created: "2019-12-11T17:50:44.928510732+07:00"
-    description: Web publishing platform for building blogs and websites.
-    digest: 51246a4f0056c195fb03d15173b39e8582ceb52d10dcc4b2c523f605a5706664
-    engine: gotpl
-    home: http://www.wordpress.com/
-    icon: https://apps.okteto.com/wordpress/icon.png
-    keywords:
-    - wordpress
-    - cms
-    - blog
-    - http
-    - web
-    - application
-    - php
-    maintainers:
-    - email: hello@okteto.com
-      name: okteto
-    name: wordpress
-    sources:
-    - https://github.com/bitnami/bitnami-docker-wordpress
-    urls:
-    - https://izzatzr.github.io/uglpec-charts/okteto-wp/wordpress-7.3.9.tgz
-    version: 7.3.9
-generated: "2019-12-11T17:50:44.913409483+07:00"
+generated: "2019-12-11T00:54:05.492429149+07:00"

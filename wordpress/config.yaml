@@ -12,6 +12,7 @@ wordpressLastName: admin
 wordpressBlogName: lpecwebpage
 
 wordpressScheme: https
+wordpressSkipInstall: true
 
 mariadb:
   db:
@@ -22,16 +23,12 @@ mariadb:
     password: admin
 
   master:
+    accessMode: ReadWriteOnce
     persistence:
       size: 5Gi
 
 persistence:
   size: 5Gi
-
-resources:
-  limits:
-    memory: 1Gi
-    cpu: 1
 
 updateStrategy:
   type: Recreate

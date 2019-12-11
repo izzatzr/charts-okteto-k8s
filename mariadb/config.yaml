@@ -1,0 +1,21 @@
+image:
+  debug: true
+
+rootUser:
+  password: abcdef123
+
+service:
+  type: NodePort
+  nodePort: 
+    master: 30001
+    slave: 30002
+
+master:
+  replicas: 2
+  persistance:
+    size: 4Gi
+
+slave:
+  replicas: 2
+  persistance:
+    size: 8Gi
