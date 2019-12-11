@@ -3,7 +3,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T22:16:08.393898272+07:00"
+    created: "2019-12-11T22:22:04.919189518+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -30,7 +30,7 @@ entries:
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-11T22:16:08.401498279+07:00"
+    created: "2019-12-11T22:22:04.926928253+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -39,7 +39,7 @@ entries:
       - phpmyadmin-database
       version: 6.x.x
     description: phpMyAdmin is an mysql administration frontend
-    digest: b481027930c663a748ad2eb0821dfa1128ad03e037709465d1992e00c105e465
+    digest: 5e40a72e5ea5b6a5f60ba253d4357cdc0783833d72ea910c717480a91de4136c
     home: https://www.phpmyadmin.net/
     icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-220x234.png
     keywords:
@@ -58,7 +58,7 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T22:16:08.418277378+07:00"
+    created: "2019-12-11T22:22:04.944825539+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -87,4 +87,4 @@ entries:
     urls:
     - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-11T22:16:08.385403318+07:00"
+generated: "2019-12-11T22:22:04.910095287+07:00"
