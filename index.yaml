@@ -3,7 +3,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T22:10:15.865269868+07:00"
+    created: "2019-12-11T22:12:09.781784392+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -25,12 +25,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - mariadb/mariadb-7.3.0.tgz
+    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
     version: 7.3.0
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-11T22:10:15.874993575+07:00"
+    created: "2019-12-11T22:12:09.791204302+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -53,12 +53,12 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-phpmyadmin
     urls:
-    - phpmyadmin/phpmyadmin-4.2.4.tgz
+    - https://izzatzr.github.io/uglpec-charts/phpmyadmin/phpmyadmin-4.2.4.tgz
     version: 4.2.4
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T22:10:15.887702385+07:00"
+    created: "2019-12-11T22:12:09.80911292+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -85,6 +85,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - wordpress/wordpress-8.0.1.tgz
+    - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-11T22:10:15.856746251+07:00"
+generated: "2019-12-11T22:12:09.772215793+07:00"
