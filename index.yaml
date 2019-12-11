@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T18:36:37.352987823+07:00"
+    created: "2019-12-11T18:54:08.413879988+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 1f351987e3fe925f2f22c9db85daf5071c38b48b793d3f5f86a5aa8af8a4536c
+    digest: 4e319a8491a9b1905febe418c97469d40d507a4ef130850a8a909b4d72da9e58
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -30,7 +30,7 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T18:36:37.391020966+07:00"
+    created: "2019-12-11T18:54:08.493595941+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -61,7 +61,7 @@ entries:
     version: 8.0.1
   - apiVersion: v1
     appVersion: 5.2.3
-    created: "2019-12-11T18:36:37.377234332+07:00"
+    created: "2019-12-11T18:54:08.465747501+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -90,4 +90,4 @@ entries:
     urls:
     - okteto-wp/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: "2019-12-11T18:36:37.346859732+07:00"
+generated: "2019-12-11T18:54:08.408130056+07:00"
