@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T22:12:09.781784392+07:00"
+    created: "2019-12-11T22:16:08.393898272+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 0373ebfeba188acb9ce28d21ac2ebf63f920b0b7dbfad2c1bc225fe4e92a2917
+    digest: 3e752180ab06787054e6fa9723f2866d0183e2b7b08d89fdeeea5e3ff1681c0f
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -30,7 +30,7 @@ entries:
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-11T22:12:09.791204302+07:00"
+    created: "2019-12-11T22:16:08.401498279+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -58,7 +58,7 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T22:12:09.80911292+07:00"
+    created: "2019-12-11T22:16:08.418277378+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -87,4 +87,4 @@ entries:
     urls:
     - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-11T22:12:09.772215793+07:00"
+generated: "2019-12-11T22:16:08.385403318+07:00"
