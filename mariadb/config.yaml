@@ -12,14 +12,14 @@ service:
 
 master:
   resources:
-	limits:
-	  memory: 512Mi
+    limits:
+      memory: 512Mi
       cpu: 200m
   replicas: 2
 
 slave:
   resources:
-	limits:
-	  memory: 256Mi
+    limits:
+      memory: 256Mi
       cpu: 100m
   replicas: 2

@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T18:56:33.798496377+07:00"
+    created: "2019-12-11T19:10:14.153898916+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 4e319a8491a9b1905febe418c97469d40d507a4ef130850a8a909b4d72da9e58
+    digest: f579ef318f80923b028d131246831f8b7476416ca35e13162c2c77e7f8105439
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -25,12 +25,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
+    - https://izzarzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
     version: 7.3.0
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T18:56:33.824732118+07:00"
+    created: "2019-12-11T19:10:14.182090997+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -57,11 +57,11 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
+    - https://izzarzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
   - apiVersion: v1
     appVersion: 5.2.3
-    created: "2019-12-11T18:56:33.812366194+07:00"
+    created: "2019-12-11T19:10:14.169346744+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -88,6 +88,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/okteto-wp/wordpress-7.3.9.tgz
+    - https://izzarzr.github.io/uglpec-charts/okteto-wp/wordpress-7.3.9.tgz
     version: 7.3.9
-generated: "2019-12-11T18:56:33.793302855+07:00"
+generated: "2019-12-11T19:10:14.148221363+07:00"
