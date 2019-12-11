@@ -1,0 +1,10 @@
+db:
+  chartName: mariadb
+ingree:
+  enable: true
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 250m

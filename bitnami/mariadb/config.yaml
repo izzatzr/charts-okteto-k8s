@@ -5,10 +5,8 @@ rootUser:
   password: abcdef123
 
 service:
-  type: NodePort
-  nodePort: 
-    master: 30001
-    slave: 30002
+  type: ClusterIP
+  port: 3306
 
 master:
   resources:
@@ -23,3 +21,4 @@ slave:
       memory: 256Mi
       cpu: 100m
   replicas: 2
+
