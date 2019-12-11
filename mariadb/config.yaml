@@ -11,11 +11,15 @@ service:
     slave: 30002
 
 master:
+  resources:
+	limits:
+	  memory: 512Mi
+      cpu: 200m
   replicas: 2
-  persistance:
-    size: 4Gi
 
 slave:
+  resources:
+	limits:
+	  memory: 256Mi
+      cpu: 100m
   replicas: 2
-  persistance:
-    size: 8Gi
