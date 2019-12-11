@@ -1,9 +1,10 @@
 db:
   host: ""
-ingree:
 
+ingress:
   annotations:
     dev.okteto.com/auto-ingress: "true"
+
 resources:
   limits:
     memory: 1Gi
