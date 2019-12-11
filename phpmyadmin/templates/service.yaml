@@ -6,9 +6,7 @@ metadata:
     app: {{ template "phpmyadmin.name" . }}
     chart: {{ template "phpmyadmin.chart" . }}
     release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
-  annotations:
-    dev.okteto.com/generate-host: "true"
+    heritage: {{ .Release.Service }}z
 spec:
   type: {{ .Values.service.type }}
   ports:

@@ -10,7 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
   annotations:
     {{- if .Values.ingress.certManager }}
-    kubernetes.io/tls-acme: "true"
+    dev.okteto.com/generate-host: "true"
     {{- end }}
     {{- range $key, $value := .Values.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
