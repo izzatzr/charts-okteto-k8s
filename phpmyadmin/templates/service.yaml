@@ -7,6 +7,8 @@ metadata:
     chart: {{ template "phpmyadmin.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    dev.okteto.com/generate-host: "true"
 spec:
   type: {{ .Values.service.type }}
   ports:
