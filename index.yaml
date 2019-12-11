@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T22:08:26.430787559+07:00"
+    created: "2019-12-11T22:10:15.865269868+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: fb1bd388e8bb0e863aceb39d8640021ebb6ff0bd59d002038e04e149b82420b7
+    digest: 0373ebfeba188acb9ce28d21ac2ebf63f920b0b7dbfad2c1bc225fe4e92a2917
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -25,37 +25,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
+    - mariadb/mariadb-7.3.0.tgz
     version: 7.3.0
-  - apiVersion: v1
-    appVersion: 10.3.18
-    created: "2019-12-11T22:08:26.420730109+07:00"
-    description: Fast, reliable, scalable, and easy to use open-source relational
-      database system. MariaDB Server is intended for mission-critical, heavy-load
-      production systems as well as for embedding into mass-deployed software. Highly
-      available MariaDB cluster.
-    digest: c0ee2fddbdc9b65850445aad18fd4ae7f4bd5974a907fc214538b02b565bfe44
-    home: https://mariadb.org
-    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
-    keywords:
-    - mariadb
-    - mysql
-    - database
-    - sql
-    maintainers:
-    - email: hello@okteto.com
-      name: okteto
-    name: mariadb
-    sources:
-    - https://github.com/bitnami/bitnami-docker-mariadb
-    - https://github.com/prometheus/mysqld_exporter
-    urls:
-    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-6.10.1.tgz
-    version: 6.10.1
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-11T22:08:26.443749012+07:00"
+    created: "2019-12-11T22:10:15.874993575+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -78,12 +53,12 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-phpmyadmin
     urls:
-    - https://izzatzr.github.io/uglpec-charts/phpmyadmin/phpmyadmin-4.2.4.tgz
+    - phpmyadmin/phpmyadmin-4.2.4.tgz
     version: 4.2.4
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T22:08:26.455988627+07:00"
+    created: "2019-12-11T22:10:15.887702385+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -110,6 +85,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
+    - wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-11T22:08:26.409125718+07:00"
+generated: "2019-12-11T22:10:15.856746251+07:00"
