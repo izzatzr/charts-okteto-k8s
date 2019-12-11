@@ -3,12 +3,12 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-11T20:57:12.029884235+07:00"
+    created: "2019-12-11T22:08:26.430787559+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
       available MariaDB cluster.
-    digest: 7a8fbeb41cd0b22814b5758d59a2c04f59cc06dde06ba042a07dd9eb63167639
+    digest: fb1bd388e8bb0e863aceb39d8640021ebb6ff0bd59d002038e04e149b82420b7
     home: https://mariadb.org
     icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
     keywords:
@@ -29,7 +29,7 @@ entries:
     version: 7.3.0
   - apiVersion: v1
     appVersion: 10.3.18
-    created: "2019-12-11T20:57:12.022505331+07:00"
+    created: "2019-12-11T22:08:26.420730109+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -55,7 +55,7 @@ entries:
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-11T20:57:12.040101954+07:00"
+    created: "2019-12-11T22:08:26.443749012+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -64,7 +64,7 @@ entries:
       - phpmyadmin-database
       version: 6.x.x
     description: phpMyAdmin is an mysql administration frontend
-    digest: 2a5a274051c95684c08ef0b67d168a343966a14e90ebb39478b3af364410af52
+    digest: b481027930c663a748ad2eb0821dfa1128ad03e037709465d1992e00c105e465
     home: https://www.phpmyadmin.net/
     icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-220x234.png
     keywords:
@@ -83,7 +83,7 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-11T20:57:12.053609788+07:00"
+    created: "2019-12-11T22:08:26.455988627+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -112,4 +112,4 @@ entries:
     urls:
     - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-11T20:57:12.017647622+07:00"
+generated: "2019-12-11T22:08:26.409125718+07:00"
