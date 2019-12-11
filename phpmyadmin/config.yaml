@@ -1,8 +1,8 @@
 db:
   host: dbdeployname.namespace.svc.cluster.local
 
-ingress:
-  enabled: true
+service:
+  type: ClusterIP
   annotations:
     dev.okteto.com/auto-ingress: "true"
 
