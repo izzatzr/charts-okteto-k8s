@@ -6,7 +6,7 @@ metadata:
     app: {{ template "phpmyadmin.name" . }}
     chart: {{ template "phpmyadmin.chart" . }}
     release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}z
+    heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:

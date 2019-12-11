@@ -1,5 +1,10 @@
 db:
-  host: ""
+  host: dbdeployname.namespace.svc.cluster.local
+
+ingress:
+  enabled: true
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
 
 resources:
   limits:
