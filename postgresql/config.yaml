@@ -1,0 +1,7 @@
+replication:
+  enabled: true
+  slaveReplicas: 2
+  applicationName: pgdb
+
+persistance:
+  size: 5Gi  

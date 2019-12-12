@@ -1,0 +1,12 @@
+service:
+  type: ClusterIP
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+
+persistance:
+  size: 5Gi
+
+resources:
+  limits:
+    memory: 256Mi
+    cpu: 500m
