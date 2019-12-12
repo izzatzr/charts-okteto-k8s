@@ -3,7 +3,7 @@ entries:
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-12T15:15:18.411975511+07:00"
+    created: "2019-12-12T15:20:11.402488222+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -30,9 +30,9 @@ entries:
   pgadmin:
   - apiVersion: v1
     appVersion: 4.15.0
-    created: "2019-12-12T15:15:18.413564825+07:00"
+    created: "2019-12-12T15:20:11.40418842+07:00"
     description: pgAdmin is a web based administration tool for PostgreSQL database
-    digest: 48a6e78af92642b926afd575c5d4adf87f4bd1d8747dbcfd04b9674f02fc189e
+    digest: 77774c90fabe2855b7bbc0f9f2ce871ba28d496536add76cc617348dc7b6127a
     home: https://www.pgadmin.org/
     maintainers:
     - email: rowanruseler@gmail.com
@@ -44,7 +44,7 @@ entries:
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.9.2
-    created: "2019-12-12T15:15:18.4280984+07:00"
+    created: "2019-12-12T15:20:11.419137847+07:00"
     dependencies:
     - condition: db.bundleTestDB
       name: mariadb
@@ -72,10 +72,10 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.6.0
-    created: "2019-12-12T15:15:18.43327851+07:00"
+    created: "2019-12-12T15:20:11.424468291+07:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: 0bd170df921fed320ebb30ebc341079cf7fbd836dfa1a45e7c80bf1b158ba350
+    digest: e0ba6f43fe9806038e2856b0c74a63cf3af4a7a75b645b2a1df37da71b2ebe7f
     home: https://www.postgresql.org/
     icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
     keywords:
@@ -99,7 +99,7 @@ entries:
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-12T15:15:18.445506333+07:00"
+    created: "2019-12-12T15:20:11.436618178+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -128,4 +128,4 @@ entries:
     urls:
     - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-12T15:15:18.403518+07:00"
+generated: "2019-12-12T15:20:11.394042751+07:00"
