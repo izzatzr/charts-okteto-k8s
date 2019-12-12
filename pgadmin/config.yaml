@@ -6,6 +6,10 @@ service:
 persistance:
   size: 5Gi
 
+env:
+  email: chart@example.local
+  password: SuperSecret
+
 resources:
   limits:
     memory: 256Mi
