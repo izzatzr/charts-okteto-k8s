@@ -1,0 +1,27 @@
+postgresqlImage:
+  debug: true
+
+pgpoolImage:
+  debug: true
+
+postgresql:
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 200m
+      memory: 320Mi
+  username: postgres
+  password: bad455
+  repmgrUsername: repmgrx
+  repmgrPassword: repmgrxxx
+
+pgpool:
+  resources:
+    limits:
+      cpu: 200m
+      memory: 320Mi
+  adminUsername: postgres
+  adminPassword: bad455
+
+persistance:
+  size: 5Gi

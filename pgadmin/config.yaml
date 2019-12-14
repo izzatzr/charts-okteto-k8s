@@ -4,13 +4,14 @@ service:
     dev.okteto.com/auto-ingress: "true"
 
 persistance:
-  size: 5Gi
+  size: 3Gi
 
 env:
-  email: chart@example.local
-  password: SuperSecret
+  email: postgres@pgdb-postgresql.izzatzr.svc.cluster.local
+  password: bad455
 
 resources:
   limits:
-    memory: 256Mi
-    cpu: 500m
+    memory: 320Mi
+    cpu: 300m
+

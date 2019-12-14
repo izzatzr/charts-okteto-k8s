@@ -1,12 +1,11 @@
-replication:
-  enabled: true
-  slaveReplicas: 2
-  applicationName: pgdb
-
 persistance:
   size: 5Gi
 
+postgresqlUsername: postgres
+
+postgresqlPassword: bad455
+
 resources:
   limits:
-    memory: 512Mi
-    cpu: 500m      
+    memory: 320Mi
+    cpu: 200m
