@@ -5,23 +5,27 @@ pgpoolImage:
   debug: true
 
 postgresql:
-  replicaCount: 1
+  replicaCount: 2
   resources:
     limits:
-      cpu: 200m
+      cpu: 300m
       memory: 320Mi
   username: postgres
   password: bad455
+  database: hasura
   repmgrUsername: repmgrx
   repmgrPassword: repmgrxxx
 
 pgpool:
+  replicaCount: 2
   resources:
     limits:
       cpu: 200m
-      memory: 320Mi
+      memory: 288Mi
   adminUsername: postgres
   adminPassword: bad455
 
 persistance:
+  accessModes:
+    - ReadWriteMany
   size: 5Gi

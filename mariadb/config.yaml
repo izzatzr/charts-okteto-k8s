@@ -2,23 +2,43 @@ image:
   debug: true
 
 rootUser:
-  password: abcdef123
+  password: bad455
 
 service:
   type: ClusterIP
   port: 3306
 
+db:
+  user: haloservice
+  password: halothere
+
 master:
+  annotations:
+    dev.okteto.com/generate-host: "true"
+  persistence:
+    accessModes: 
+      - ReadWriteOnce
+    size: 5Gi
+  updateStrategy:
+    type: RollingUpdate
   resources:
     limits:
-      memory: 512Mi
-      cpu: 200m
-  replicas: 2
+      memory: 288Mi
+      cpu: 150m
 
 slave:
+  replicas: 1
+  persistence:
+    accessModes:
+      - ReadWriteOnce
+    size: 3Gi
+  updateStrategy:
+    type: RollingUpdate
   resources:
     limits:
       memory: 256Mi
       cpu: 100m
-  replicas: 2
+
+tests:
+  enabled: false
 

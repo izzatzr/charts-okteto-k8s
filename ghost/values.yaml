@@ -145,6 +145,11 @@ mariadb:
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
+  resources:
+    limits:
+      memory: 256Mi
+      cpu: 250m
+
   master:
     persistence:
       enabled: true
@@ -177,7 +182,7 @@ service:
   ##
   externalTrafficPolicy: Cluster
   ## Service annotations done as key:value pairs
-  annotations:
+  annotations: {}
 
 ## Pod Security Context
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
@@ -208,7 +213,7 @@ persistence:
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
 resources:
-  requests:
+  limits:
     memory: 512Mi
     cpu: 300m
 

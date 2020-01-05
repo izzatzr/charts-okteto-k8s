@@ -1,11 +1,15 @@
 persistance:
-  size: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  size: 7Gi
 
 postgresqlUsername: postgres
 
 postgresqlPassword: bad455
 
+postgresqlDatabase: hasura
+
 resources:
   limits:
-    memory: 320Mi
-    cpu: 200m
+    memory: 128Mi
+    cpu: 150m

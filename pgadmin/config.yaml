@@ -1,17 +1,20 @@
+replicaCount: 2
+
 service:
   type: ClusterIP
   annotations:
     dev.okteto.com/auto-ingress: "true"
 
 persistance:
+  accessMode: ReadWriteMany
   size: 3Gi
 
 env:
-  email: postgres@pgdb-postgresql.izzatzr.svc.cluster.local
+  email: postgres@pgha-postgresql-ha-postgresql.izzatzr.svc.cluster.local
   password: bad455
 
 resources:
   limits:
-    memory: 320Mi
-    cpu: 300m
+    memory: 640Mi
+    cpu: 600m
 

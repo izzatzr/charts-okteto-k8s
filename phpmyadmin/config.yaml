@@ -1,5 +1,5 @@
 db:
-  host: dbdeployname.namespace.svc.cluster.local
+  host: mariadb.futuraworks.svc.cluster.local
 
 service:
   type: ClusterIP
@@ -8,5 +8,5 @@ service:
 
 resources:
   limits:
-    memory: 1Gi
-    cpu: 500m
+    memory: 125Mi
+    cpu: 100m
