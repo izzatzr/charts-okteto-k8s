@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: filestash
+  name: filestash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filestash
+  template:
+    metadata:
+      labels:
+        app: filestash
+    spec:
+      containers:
+      - name: filestash
+        image: machines/filestash:b3124b9
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8334
+          protocol: TCP
+        resources:
+          limits:
+            memory: "728Mi"
+            cpu: "350m"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: filestash
+  name: filestash
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8334
+  selector:
+    app: filestash
+  type: ClusterIP

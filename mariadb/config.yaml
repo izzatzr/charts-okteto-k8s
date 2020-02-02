@@ -13,8 +13,6 @@ db:
   password: halothere
 
 master:
-  annotations:
-    dev.okteto.com/generate-host: "true"
   persistence:
     accessModes: 
       - ReadWriteOnce
@@ -22,9 +20,9 @@ master:
   updateStrategy:
     type: RollingUpdate
   resources:
-    limits:
-      memory: 288Mi
-      cpu: 150m
+    requests:
+      memory: 1Mi
+      cpu: 1m
 
 slave:
   replicas: 1
@@ -35,9 +33,9 @@ slave:
   updateStrategy:
     type: RollingUpdate
   resources:
-    limits:
-      memory: 256Mi
-      cpu: 100m
+    requests:
+      memory: 1Mi
+      cpu: 1m
 
 tests:
   enabled: false

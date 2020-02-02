@@ -18,10 +18,10 @@ spec:
   tls:
   - secretName: {{ template "lamp.fullname" . }}-tls-www
     hosts:
-    - {{ .name }}
+    - www.{{ template "lamp.domain" . }}
   {{- end }}
   rules:
-  - host: {{ .name }}
+  - host: www.{{ template "lamp.domain" . }}
     http:
       paths:
       - path: /

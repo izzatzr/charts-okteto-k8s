@@ -7,10 +7,6 @@ metadata:
     chart: {{ template "phpmyadmin.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  annotations:
-{{- if .Values.service.annotations }}
-{{ toYaml .Values.service.annotations | indent 4 }}
-{{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:

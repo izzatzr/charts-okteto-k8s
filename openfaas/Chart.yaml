@@ -16,4 +16,4 @@ name: openfaas
 sources:
 - https://github.com/openfaas/faas
 - https://github.com/openfaas/faas-netes
-version: 5.3.11
+version: 5.4.1

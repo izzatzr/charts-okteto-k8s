@@ -41,7 +41,7 @@ php:
 
   ## php.oldHTTPRoot Additionally mounts the webroot at `php.oldHTTPRoot` to compensate
   ## for absolute path file links
-  # oldHTTPRoot: /var/www/html
+  oldHTTPRoot: /var/www/html
 
   ## php.ini additional PHP config values, see examples on how to use
   # ini: |
@@ -67,10 +67,10 @@ php:
   # - subPath2
 
   ## php.resources PHP container resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources: 
+    limits:
+      cpu: 250m
+      memory: 250Mi
 
 httpd:
   ## httpd.repository default httpd image
@@ -80,18 +80,18 @@ httpd:
   tag: "2.4-alpine"
 
   ## httpd.resources HTTPD container resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources: 
+    requests:
+      cpu: 250m
+      memory: 250Mi
 
 
 mysql:
   ## mysql.rootPassword Sets the MySQL root password, enables MySQL service if not empty
-  rootPassword: opikwibu
+  rootPassword: bad455
 
   ## mysql.user MySQL user
-  user: futuraworks
+  user: haloservice
 
   ## mysql.password MySQL user password
   password: opikwibu
@@ -103,22 +103,22 @@ mysql:
   ##     [mysql](https://hub.docker.com/_/mysql/)
   ##     [mariadb](https://hub.docker.com/_/mariadb/)
   ##     [percona](https://hub.docker.com/_/percona/)
-  repository: "mysql"
+  repository: "mariadb"
 
   ## mysql.tag MySQL image tag
-  tag: "5.7"
+  tag: "10.4"
 
   ## mysql.imagePullPolicy Image pull policy
   imagePullPolicy: Always
 
   ## mysql.sockets Enables communication between MySQL and PHP via sockets instead of TCP
-  sockets: true
+  sockets: false
 
   ## mysql.resources Resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources: 
+    limits:
+      cpu: 275m
+      memory: 256Mi
 
 sftp:
   ## sftp.repository default sftp image
@@ -134,23 +134,23 @@ sftp:
   serviceType: ClusterIP
 
   ## sftp.port Port to advertise service in LoadBalancer mode
-  port: 21
+  port: 22
 
   ## sftp.nodePort  Port to advertise service in Ingress mode
   ## `sftp.serviceType` must be set to `NodePort`
   # nodePort: 30111
 
   ## sftp.user SFTP User
-  user: futuraworks
+  user: haloservice
 
   ## sftp.password SFTP Password
   password: opikwibu
 
   ## sftp.resources resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources: 
+    limits:
+      cpu: 200m
+      memory: 250Mi
 
 webdav:
   ## webdav.enabled Enables webdav service
@@ -163,16 +163,16 @@ webdav:
   subdomain: webdav
 
   ## webdav.user WebDAV User
-  # user:
+  user: haloservice
 
   ## webdav.password WebDAV Password
-  # password:
+  password: opikwibu
 
   ## webdav.resources resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources:
+    requests:
+      cpu: 200m
+      memory: 200Mi
 
 git:
   ## git.enabled Enables Git service
@@ -236,10 +236,10 @@ phpmyadmin:
   subdomain: phpmyadmin
 
   ## phpmyadmin.resources resource requests/limits
-  resources: false
-  #  requests:
-  #    cpu: 1m
-  #    memory: 1Mi
+  resources: 
+    limits:
+      cpu: 500m
+      memory: 512Mi
 
 resources:
   requests:
@@ -249,12 +249,12 @@ resources:
     ## resources.requests.memory Memory resource requests
     memory: 1Mi
 
-  # limits:
+  limits:
   ## resources.limits.cpu CPU resource limits
-  #   cpu: 1000m
+    cpu: 1000m
 
   ## resources.limits.memory Memory resource limits
-  #   memory: 1024Mi
+    memory: 1024Mi
 
 
 ### STORAGE ###
@@ -289,7 +289,7 @@ persistence:
 
 service:
   ## service.type Changes to ClusterIP automatically if ingress enabled
-  type: ClusterIP
+  type: LoadBalancer
 
   ## service.HTTPPort Port to advertise the main web service in LoadBalancer mode
   HTTPPort: 80
@@ -301,26 +301,26 @@ ingress:
 
   ## ingress.domain domain to advertise the services - A records need to point to
   ## ingress controllers IP
-  ## domain: infra-futuraworks.cloud.okteto.net
+  domain: cluster-infra-futuraworks.cloud.okteto.net
 
   ## ingress.subdomainWWW enables www subdomain and 301 redirect from domain
   ## > NOTE: Requires nginx ingress controller
-  # subdomainWWW: false
+  ##subdomainWWW: true
 
   ## ingress.ssl Enables [lego](https://github.com/jetstack/kube-lego) letsencrypt
   ## ssl support - working lego container necessary
   ## > NOTE: Requires nginx ingress controller
-  # ssl: false
+  ssl: true
 
   ## ingress.htpasswdString if specified main web service requires authentication.
   ## Format: _user:$apr1$F..._
   ## > NOTE: Requires nginx ingress controller
-  # htpasswdString: "user:$apr1$FfVI2PRr$f9MW8rsr5RmmxbdV0Iipk1"
+  ##htpasswdString: "haloservice:opikwibu"
 
   ## ingress.annotations specify custom ingress annotations such as e.g.
   annotations:
     dev.okteto.com/auto-ingress: "true"
-  #   ingress.kubernetes.io/proxy-body-size: "50m"
+    #kubernetes.io/ingress.class: nginx
 
 
 ### WORDPRESS ###

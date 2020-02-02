@@ -1,12 +1,17 @@
 db:
-  host: mariadb.futuraworks.svc.cluster.local
+  host: lamp-lamp.infra-futuraworks.svc.cluster.local
 
 service:
   type: ClusterIP
+
+ingress:
+  enabled: true
+  certManager: true
   annotations:
     dev.okteto.com/auto-ingress: "true"
 
 resources:
   limits:
-    memory: 125Mi
-    cpu: 100m
+    memory: 256Mi
+    cpu: 200m
+

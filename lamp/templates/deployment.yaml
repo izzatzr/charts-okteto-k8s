@@ -515,7 +515,7 @@ spec:
       {{ if .Values.sftp.enabled }}
       - name: sftp
         image: "{{ .Values.sftp.repository }}:{{ .Values.sftp.tag }}"
-        command: [/bin/bash, -c, "bash /entrypoint $SFTP_USER:$SFTP_PASSWORD:33:33"]
+        command: [/bin/bash, -c, "bash /entrypoint $SFTP_USER:$SFTP_PASSWORD:33:33:/var/www/html,/data/web/"]
         ports:
         - containerPort: 22
         env:

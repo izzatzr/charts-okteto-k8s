@@ -1,11 +1,11 @@
-# functionNamespace: openfaas-fn  # Default namespace for functions
+functionNamespace: openfaas-fn  # Default namespace for functions
 
 async: true
 
-# exposeServices: true
-serviceType: ClusterIP
+exposeServices: true
+serviceType: NodePort
 httpProbe: true               # Setting to true will use HTTP for readiness and liveness probe on the OpenFaaS system Pods (incompatible with Istio < 1.1.5)
-rbac: false
+rbac: true
 clusterRole: false            # Set to true to have OpenFaaS administrate multiple namespaces
 
 # create pod security policies for OpenFaaS control plane
@@ -13,13 +13,13 @@ clusterRole: false            # Set to true to have OpenFaaS administrate multip
 psp: false
 securityContext: true
 basic_auth: true
+generateBasicAuth: false
 
 # image pull policy for openfaas components, can change to `IfNotPresent` in offline env
 openfaasImagePullPolicy: "Always"
 
 gatewayExternal:
   annotations: {}
-##    dev.okteto.com/auto-ingress: "true"
 
 gateway:
   image: openfaas/gateway:0.18.7
@@ -34,9 +34,9 @@ gateway:
   maxIdleConnsPerHost: 1024
   directFunctions: true
   resources:
-    limits:
-      memory: "250Mi"
-      cpu: "250m"
+    requests:
+      memory: "120Mi"
+      cpu: "50m"
 
 faasnetes:
   image: openfaas/faas-netes:0.9.15
@@ -46,13 +46,13 @@ faasnetes:
   httpProbe: true               # Setting to true will use HTTP for readiness and liveness probe on Pods (incompatible with Istio < 1.1.5)
   setNonRootUser: false
   readinessProbe:
-    initialDelaySeconds: 0
+    initialDelaySeconds: 2
     timeoutSeconds: 1           # Tuned-in to run checks early and quickly to support fast cold-start from zero replicas
-    periodSeconds: 1            # Reduce to 1 for a faster cold-start, increase higher for lower-CPU usage
+    periodSeconds: 2            # Reduce to 1 for a faster cold-start, increase higher for lower-CPU usage
   livenessProbe:
-    initialDelaySeconds: 0
+    initialDelaySeconds: 2
     timeoutSeconds: 1
-    periodSeconds: 1           # Reduce to 1 for a faster cold-start, increase higher for lower-CPU usage
+    periodSeconds: 2           # Reduce to 1 for a faster cold-start, increase higher for lower-CPU usage
   resources:
     requests:
       memory: "120Mi"
@@ -88,9 +88,8 @@ prometheus:
   image: prom/prometheus:v2.11.0
   create: true
   resources:
-    limits:
-      memory: "200Mi"
-      cpu: "250m"
+    requests:
+      memory: "512Mi"
 
 alertmanager:
   image: prom/alertmanager:v0.18.0
@@ -112,9 +111,8 @@ nats:
   image: nats-streaming:0.11.2
   enableMonitoring: false
   resources:
-    limits:
-      cpu: "250m"
-      memory: "125Mi"
+    requests:
+      memory: "120Mi"
 
 # ingress configuration
 ingress:
@@ -133,7 +131,7 @@ ingress:
 # ingressOperator (optional) – component to have specific FQDN and TLS for Functions
 # https://github.com/openfaas-incubator/ingress-operator
 ingressOperator:
-  image: openfaas/ingress-operator:0.4.0
+  image: openfaas/ingress-operator:0.5.0
   replicas: 1
   create: false
   resources:
@@ -145,8 +143,8 @@ faasIdler:
   image: openfaas/faas-idler:0.2.1
   replicas: 1
   create: true
-  inactivityDuration: 15m               # If a function is inactive for 15 minutes, it may be scaled to zero
-  reconcileInterval: 1m                 # The interval between each attempt to scale functions to zero
+  inactivityDuration: 30m               # If a function is inactive for 15 minutes, it may be scaled to zero
+  reconcileInterval: 2m                 # The interval between each attempt to scale functions to zero
   dryRun: true                          # Set to false to enable the idler to apply changes and scale to zero
   resources:
     requests:

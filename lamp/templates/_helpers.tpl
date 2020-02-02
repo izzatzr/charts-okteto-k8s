@@ -25,6 +25,7 @@ Get the domain name of the chart - used for ingress rules
 {{- if not .Values.ingress.enabled -}}
 no_domain_specified
 {{- else -}}
+{{- required "Please specify an ingress domain at .Values.ingress.domain" .Values.ingress.domain -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}

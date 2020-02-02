@@ -42,17 +42,6 @@ Add the OpenFaaS `helm` chart:
 helm repo add openfaas https://openfaas.github.io/faas-netes/
 ```
 
-Generate secrets so that we can enable basic authentication for the gateway:
-
-```sh
-# generate a random password
-PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
-
-kubectl -n openfaas create secret generic basic-auth \
---from-literal=basic-auth-user=admin \
---from-literal=basic-auth-password="$PASSWORD"
-```
-
 Now decide how you want to expose the services and edit the `helm upgrade` command as required.
 
 * To use NodePorts (default) pass no additional flags
@@ -67,20 +56,40 @@ Now deploy OpenFaaS from the helm chart repo:
 helm repo update \
  && helm upgrade openfaas --install openfaas/openfaas \
     --namespace openfaas  \
-    --set basic_auth=true \
-    --set functionNamespace=openfaas-fn
+    --set functionNamespace=openfaas-fn \
+    --set generateBasicAuth=true 
 ```
 
 > The above command will also update your helm repo to pull in any new releases.
 
+Retrieve the OpenFaaS credentials with:
+
+```sh
+PASSWORD=$(kubectl -n openfaas get secret basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode) && \
+echo "OpenFaaS admin password: $PASSWORD"
+```
+#### Generate basic-auth credentials
+
+The chart has a pre-install hook which can generate basic-auth credentials, enable it with `--set generateBasicAuth=true`.
+
+Alternatively, you can set `generateBasicAuth` to `false` and generate or supply the basic-auth credentials yourself. This is the option you may want if you are using `helm template`.
+
+```sh	
+# generate a random password	
+PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)	
+kubectl -n openfaas create secret generic basic-auth \	
+--from-literal=basic-auth-user=admin \	
+--from-literal=basic-auth-password="$PASSWORD"	
+```	
+
 #### Tuning cold-start
 
-The concept of a cold-start in OpenFaaS only applies if you A) use faas-idler and B) set a specific function to scale to zero.
+The concept of a cold-start in OpenFaaS only applies if you A) use faas-idler and B) set a specific function to scale to zero. Otherwise there is not a cold-start, because at least one replica of your function remains available.
 
-There are two ways to reduce the Kubernetes cold-start for a pre-pulled image, which is 1-2 seconds.
+There are two ways to reduce the Kubernetes cold-start for a pre-pulled image, which is around 1-2 seconds.
 
 1) Don't set the function to scale down to zero, just set it a minimum availability i.e. 1/1 replicas
-2) Use async invocations via the `/async/function/<name>` route
+2) Use async invocations via the `/async-function/<name>` route on the gateway, so that the latency is hidden from the caller
 3) Tune the readinessProbes to be aggressively low values. This will reduce the cold-start at the cost of more `kubelet` CPU usage
 
 To achieve around 1s coldstart, set `values.yaml`:
@@ -101,7 +110,13 @@ faasnetes:
   imagePullPolicy: "IfNotPresent"    # Image pull policy for deployed functions
 ```
 
-You should also set `imagePullPolicy` to `IfNotPresent` so that the `kubelet` only pulls images which are not already available.
+
+In addition:
+
+* Pre-pull images on each node
+* Use an in-cluster registry to reduce the pull latency for images
+* Set the `imagePullPolicy` to `IfNotPresent` so that the `kubelet` only pulls images which are not already available
+* Explore alternatives such as not scaling to absolute zero, and using async calls which do not show the cold start
 
 #### httpProbe vs. execProbe
 
@@ -288,6 +303,7 @@ Additional OpenFaaS options in `values.yaml`.
 | `exposeServices` | Expose `NodePorts/LoadBalancer`  | `true` |
 | `serviceType` | Type of external service to use `NodePort/LoadBalancer` | `NodePort` |
 | `basic_auth` | Enable basic authentication on the Gateway | `true` |
+| `generateBasicAuth` | Generate admin password for basic authentication | `false` |
 | `rbac` | Enable RBAC | `true` |
 | `httpProbe` | Setting to true will use HTTP for readiness and liveness probe on the OpenFaaS system Pods (compatible with Istio >= 1.1.5) | `true` |
 | `psp` | Enable [Pod Security Policy](https://kubernetes.io/docs/concepts/policy/pod-security-policy/) for OpenFaaS accounts | `false` |
