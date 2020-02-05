@@ -1,3 +1,3 @@
 # charts-okteto-k8s
 
-this charts is used to install app in okteto cloud 
+list of modified helm charts to install app in okteto cloud 
