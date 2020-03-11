@@ -17,18 +17,18 @@ spec:
         app: api
     spec:
       containers:
-      - image: hasura/graphql-engine:v1.0.0
+      - image: hasura/graphql-engine:v1.1.0
         imagePullPolicy: IfNotPresent
         name: api
         env:
         - name: HASURA_GRAPHQL_DATABASE_URL
-          value: postgres://postgres:bad455@pgdb-postgresql.futuraworks.svc.cluster.local:5432/hasura
+          value: postgres://postgres:d1c06464c4@pgdb-postgresql.uglpec.svc.cluster.local:5432/uglpec
         - name: HASURA_GRAPHQL_ADMIN_SECRET
-          value: "opikwibu"
+          value: "d1c06464c4"
         - name: HASURA_GRAPHQL_ENABLE_CONSOLE
           value: "true"
         - name: HASURA_GRAPHQL_JWT_SECRET
-          value: '{"type":"HS256", "key": "3EK6FD+o0+c7tzBNVfjpMkNDi2yARAAKzQlk8O2IKoxQu4nF7EdAh8s3TwpHwrdWT6R"}'
+          value: '{"type":"HS256", "key": "062bca0bee7dbce87629c85c841b6a63"}'
         ports:
         - containerPort: 8080
           protocol: TCP
