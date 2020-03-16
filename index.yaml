@@ -1,9 +1,38 @@
 apiVersion: v1
 entries:
+  drone:
+  - apiVersion: v1
+    appVersion: 1.6.1
+    created: "2020-03-16T19:12:36.584011167+07:00"
+    description: Drone is a Continuous Delivery system built on container technology
+    digest: 35f86aebc612e75914df1876b51b166927884b1663aa7ccbc0ec757659a91486
+    home: https://drone.io/
+    icon: https://drone.io/apple-touch-icon.png
+    keywords:
+    - continuous-delivery
+    - continuous-deployment
+    - continuous-integration
+    - docker
+    - drone
+    - drone.io
+    - go
+    maintainers:
+    - email: christian.roggia@gmail.com
+      name: christian-roggia
+    - email: username.taken@gmail.com
+      name: paulczar
+    - email: zakkg3@gmail.com
+      name: zakkg3
+    name: drone
+    sources:
+    - https://github.com/drone/drone
+    urls:
+    - drone/drone-2.5.1.tgz
+    version: 2.5.1
   mariadb:
   - apiVersion: v1
     appVersion: 10.3.20
-    created: "2019-12-14T23:23:20.048847193+07:00"
+    created: "2020-03-16T19:12:36.592255686+07:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software. Highly
@@ -25,12 +54,12 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mariadb
     - https://github.com/prometheus/mysqld_exporter
     urls:
-    - https://izzatzr.github.io/uglpec-charts/mariadb/mariadb-7.3.0.tgz
+    - mariadb/mariadb-7.3.0.tgz
     version: 7.3.0
   pgadmin:
   - apiVersion: v1
     appVersion: 4.15.0
-    created: "2019-12-14T23:23:20.075538588+07:00"
+    created: "2020-03-16T19:12:36.593936116+07:00"
     description: pgAdmin is a web based administration tool for PostgreSQL database
     digest: 77774c90fabe2855b7bbc0f9f2ce871ba28d496536add76cc617348dc7b6127a
     home: https://www.pgadmin.org/
@@ -39,40 +68,12 @@ entries:
       name: rowanruseler
     name: pgadmin
     urls:
-    - https://izzatzr.github.io/uglpec-charts/pgadmin/pgadmin-1.0.5.tgz
+    - pgadmin/pgadmin-1.0.5.tgz
     version: 1.0.5
-  phpmyadmin:
-  - apiVersion: v1
-    appVersion: 4.9.2
-    created: "2019-12-14T23:23:20.102438506+07:00"
-    dependencies:
-    - condition: db.bundleTestDB
-      name: mariadb
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      tags:
-      - phpmyadmin-database
-      version: 6.x.x
-    description: phpMyAdmin is an mysql administration frontend
-    digest: 716c0f0e79e5b46bc59c790b3b9abadb4fa3762d0d4e0200a9ac17745ff15723
-    home: https://www.phpmyadmin.net/
-    icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-220x234.png
-    keywords:
-    - mariadb
-    - mysql
-    - phpmyadmin
-    maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
-    name: phpmyadmin
-    sources:
-    - https://github.com/bitnami/bitnami-docker-phpmyadmin
-    urls:
-    - https://izzatzr.github.io/uglpec-charts/phpmyadmin/phpmyadmin-4.2.4.tgz
-    version: 4.2.4
   postgresql:
   - apiVersion: v1
     appVersion: 11.6.0
-    created: "2019-12-14T23:23:20.114850761+07:00"
+    created: "2020-03-16T19:12:36.605432539+07:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: e0ba6f43fe9806038e2856b0c74a63cf3af4a7a75b645b2a1df37da71b2ebe7f
@@ -94,12 +95,12 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-postgresql
     urls:
-    - https://izzatzr.github.io/uglpec-charts/postgresql/postgresql-8.0.0.tgz
+    - postgresql/postgresql-8.0.0.tgz
     version: 8.0.0
   wordpress:
   - apiVersion: v1
     appVersion: 5.3.0
-    created: "2019-12-14T23:23:20.152316121+07:00"
+    created: "2020-03-16T19:12:36.617667246+07:00"
     dependencies:
     - condition: mariadb.enabled
       name: mariadb
@@ -126,6 +127,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-wordpress
     urls:
-    - https://izzatzr.github.io/uglpec-charts/wordpress/wordpress-8.0.1.tgz
+    - wordpress/wordpress-8.0.1.tgz
     version: 8.0.1
-generated: "2019-12-14T23:23:20.018196949+07:00"
+generated: "2020-03-16T19:12:36.580909749+07:00"
