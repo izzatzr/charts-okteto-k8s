@@ -1,17 +1,12 @@
 db:
-  host: lamp-lamp.infra-futuraworks.svc.cluster.local
+  host: database-mariadb.jay-del.svc.cluster.local
 
 service:
   type: ClusterIP
 
 ingress:
   enabled: true
-  certManager: true
+  #certManager: true
   annotations:
-    dev.okteto.com/auto-ingress: "true"
-
-resources:
-  limits:
-    memory: 256Mi
-    cpu: 200m
-
+    dev.okteto.com/generate-host: "true"
+  #  dev.okteto.com/auto-ingress: "true"

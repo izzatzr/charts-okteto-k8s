@@ -19,12 +19,12 @@
 image:
   registry: docker.io
   repository: bitnami/mariadb
-  tag: 10.3.20-debian-9-r19
+  tag: latest
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
   ##
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   ## Optionally specify an array of imagePullSecrets.
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -73,9 +73,9 @@ service:
   ## Specify the nodePort value for the LoadBalancer and NodePort service types.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
-  nodePort:
-    master: 30001
-    slave: 30002
+  #nodePort:
+  #  master: 30001
+  #  slave: 30002
 
 ## Pods Service Account
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
@@ -111,7 +111,7 @@ rootUser:
   ## MariaDB admin password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-the-root-password-on-first-run
   ##
-  password: ""
+  password: jayasp12
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
@@ -126,12 +126,12 @@ db:
   ## MariaDB username and password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-user-on-first-run
   ##
-  user: ""
-  password: ""
+  user: jayasp
+  password: jayasp12
   ## Database to create
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-on-first-run
   ##
-  name: my_database
+  name: sanjacake
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
@@ -146,7 +146,7 @@ replication:
   ## Enable replication. This enables the creation of replicas of MariaDB. If false, only a
   ## master deployment would be created
   ##
-  enabled: true
+  enabled: false
   ## MariaDB replication user
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-up-a-replication-cluster
   ##
@@ -242,7 +242,7 @@ master:
     - ReadWriteOnce
     ## Persistent Volume size
     ##
-    size: 8Gi
+    size: 5Gi
 
   extraInitContainers: |
   # - name: do-something
@@ -554,7 +554,7 @@ metrics:
 ## See test-runner.yaml and tests.yaml for details.
 ## To run the tests after the deployment, enter "helm test <release-name>".
 tests:
-  enabled: true
+  enabled: false
   # resources: {}
   testFramework:
     image:
